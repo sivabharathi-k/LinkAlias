@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "LinkAlias",
+  "version": "1.2.0",
+  "description": "Assign custom aliases to hyperlinks on enabled websites with local persistent storage.",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "config.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

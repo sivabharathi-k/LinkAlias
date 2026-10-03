@@ -1,0 +1,327 @@
+/* LinkAlias Extension - Phase 8 CSS (Pencil, Popup, Auth UI & Status Badge) */
+
+/* 
+ * 1. Pencil Button Styling
+ */
+.linkalias-pencil {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 4px !important;
+  margin-right: 2px !important;
+  padding: 1px 3px !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  background-color: rgba(240, 240, 245, 0.95) !important;
+  border: 1px solid rgba(180, 180, 200, 0.7) !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  vertical-align: middle !important;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  text-decoration: none !important;
+  outline: none !important;
+  color: #333333 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  z-index: 9999 !important;
+}
+
+.linkalias-pencil:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+  transform: scale(1.15) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+
+.linkalias-pencil:active {
+  transform: scale(0.95) !important;
+  background-color: #cbd5e1 !important;
+}
+
+/* 
+ * 2. Floating Alias UI Popup Container
+ */
+.linkalias-popup {
+  position: fixed !important;
+  width: 300px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.18), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  z-index: 2147483647 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  color: #0f172a !important;
+  padding: 14px !important;
+  box-sizing: border-box !important;
+  animation: linkalias-fade-in 0.15s ease-out !important;
+}
+
+@keyframes linkalias-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Popup Header */
+.linkalias-popup-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.linkalias-popup-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  letter-spacing: -0.01em !important;
+}
+
+.linkalias-close-btn {
+  background: transparent !important;
+  border: none !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  color: #94a3b8 !important;
+  cursor: pointer !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  transition: color 0.15s, background-color 0.15s !important;
+}
+
+.linkalias-close-btn:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Popup Body */
+.linkalias-popup-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.linkalias-field-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.linkalias-field-label {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #64748b !important;
+}
+
+.linkalias-link-text,
+.linkalias-link-url {
+  font-size: 12px !important;
+  color: #334155 !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 5px !important;
+  padding: 6px 8px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.linkalias-link-url {
+  color: #2563eb !important;
+  font-family: monospace !important;
+  font-size: 11px !important;
+}
+
+.linkalias-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  outline: none !important;
+  transition: border-color 0.15s, box-shadow 0.15s !important;
+}
+
+.linkalias-input:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Success Feedback Message */
+.linkalias-feedback-msg {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #166534 !important;
+  background-color: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  text-align: center !important;
+  margin-top: 2px !important;
+}
+
+/* Popup Footer Buttons */
+.linkalias-popup-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;
+  margin-top: 12px !important;
+  padding-top: 8px !important;
+  border-top: 1px solid #f1f5f9 !important;
+}
+
+.linkalias-btn {
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s, transform 0.1s !important;
+  outline: none !important;
+}
+
+.linkalias-btn-delete {
+  background-color: #fef2f2 !important;
+  color: #dc2626 !important;
+  border: 1px solid #fca5a5 !important;
+  margin-right: auto !important;
+}
+
+.linkalias-btn-delete:hover {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+}
+
+.linkalias-btn-cancel {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.linkalias-btn-cancel:hover {
+  background-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.linkalias-btn-save {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border: 1px solid #1d4ed8 !important;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+.linkalias-btn-save:hover {
+  background-color: #1d4ed8 !important;
+}
+
+.linkalias-btn-save:active,
+.linkalias-btn-cancel:active,
+.linkalias-btn-delete:active {
+  transform: scale(0.97) !important;
+}
+
+/* 
+ * 3. Injected Webpage Auth UI Removed
+ * (Webpages remain 100% native with zero injected header/auth bars. Only ✏️ pencil icons and popup dialogs are rendered.)
+ */
+
+/* 
+ * 4. Extension Authentication Modal Overlay & Dialog Card
+
+ */
+.linkalias-auth-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(3px) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.linkalias-auth-card {
+  width: 320px !important;
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  box-sizing: border-box !important;
+  animation: linkalias-fade-in 0.15s ease-out !important;
+}
+
+.linkalias-auth-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 12px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.linkalias-auth-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.linkalias-auth-heading {
+  margin: 0 0 4px 0 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+.linkalias-auth-subtext {
+  margin: 0 0 14px 0 !important;
+  font-size: 12px !important;
+  color: #64748b !important;
+  line-height: 1.4 !important;
+}
+
+.linkalias-auth-error {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #b91c1c !important;
+  background-color: #fef2f2 !important;
+  border: 1px solid #fca5a5 !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+  margin-top: 8px !important;
+  text-align: center !important;
+}
+
+.linkalias-auth-toggle {
+  margin-top: 14px !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #64748b !important;
+}
+
+.linkalias-auth-toggle a {
+  color: #2563eb !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.linkalias-auth-toggle a:hover {
+  text-decoration: underline !important;
+}
